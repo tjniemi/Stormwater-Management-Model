@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D01EE458-745E-452C-8D7B-17B294D089CB}</ProjectGuid>
     <RootNamespace>VS2017CLE</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -72,6 +72,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>swmm5</TargetName>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>swmm5</TargetName>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -97,7 +100,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>swmm5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -114,14 +117,88 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\climate.c" />
+    <ClCompile Include="..\controls.c" />
+    <ClCompile Include="..\culvert.c" />
+    <ClCompile Include="..\datetime.c" />
+    <ClCompile Include="..\dwflow.c" />
+    <ClCompile Include="..\dynwave.c" />
+    <ClCompile Include="..\error.c" />
+    <ClCompile Include="..\exfil.c" />
+    <ClCompile Include="..\findroot.c" />
+    <ClCompile Include="..\flowrout.c" />
+    <ClCompile Include="..\forcmain.c" />
+    <ClCompile Include="..\gage.c" />
+    <ClCompile Include="..\gwater.c" />
+    <ClCompile Include="..\hash.c" />
+    <ClCompile Include="..\hotstart.c" />
+    <ClCompile Include="..\iface.c" />
+    <ClCompile Include="..\infil.c" />
+    <ClCompile Include="..\inflow.c" />
+    <ClCompile Include="..\input.c" />
+    <ClCompile Include="..\inputrpt.c" />
+    <ClCompile Include="..\keywords.c" />
+    <ClCompile Include="..\kinwave.c" />
+    <ClCompile Include="..\landuse.c" />
+    <ClCompile Include="..\lid.c" />
+    <ClCompile Include="..\lidproc.c" />
+    <ClCompile Include="..\link.c" />
     <ClCompile Include="..\main.c">
       <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MultiThreaded</RuntimeLibrary>
       <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Fast</FloatingPointModel>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
     </ClCompile>
+    <ClCompile Include="..\massbal.c" />
+    <ClCompile Include="..\mathexpr.c" />
+    <ClCompile Include="..\mempool.c" />
+    <ClCompile Include="..\node.c" />
+    <ClCompile Include="..\odesolve.c" />
+    <ClCompile Include="..\output.c" />
+    <ClCompile Include="..\project.c" />
+    <ClCompile Include="..\qualrout.c" />
+    <ClCompile Include="..\rain.c" />
+    <ClCompile Include="..\rdii.c" />
+    <ClCompile Include="..\report.c" />
+    <ClCompile Include="..\roadway.c" />
+    <ClCompile Include="..\routing.c" />
+    <ClCompile Include="..\runoff.c" />
+    <ClCompile Include="..\shape.c" />
+    <ClCompile Include="..\snow.c" />
+    <ClCompile Include="..\stats.c" />
+    <ClCompile Include="..\statsrpt.c" />
+    <ClCompile Include="..\subcatch.c" />
+    <ClCompile Include="..\surfqual.c" />
+    <ClCompile Include="..\swmm5.c" />
+    <ClCompile Include="..\table.c" />
+    <ClCompile Include="..\toposort.c" />
+    <ClCompile Include="..\transect.c" />
+    <ClCompile Include="..\treatmnt.c" />
+    <ClCompile Include="..\xsect.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\consts.h" />
+    <ClInclude Include="..\datetime.h" />
+    <ClInclude Include="..\enums.h" />
+    <ClInclude Include="..\error.h" />
+    <ClInclude Include="..\exfil.h" />
+    <ClInclude Include="..\findroot.h" />
+    <ClInclude Include="..\funcs.h" />
+    <ClInclude Include="..\globals.h" />
+    <ClInclude Include="..\hash.h" />
+    <ClInclude Include="..\headers.h" />
+    <ClInclude Include="..\infil.h" />
+    <ClInclude Include="..\keywords.h" />
+    <ClInclude Include="..\lid.h" />
+    <ClInclude Include="..\macros.h" />
+    <ClInclude Include="..\mathexpr.h" />
+    <ClInclude Include="..\mempool.h" />
+    <ClInclude Include="..\objects.h" />
+    <ClInclude Include="..\odesolve.h" />
     <ClInclude Include="..\swmm5.h" />
+    <ClInclude Include="..\text.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Roadmap.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

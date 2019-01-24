@@ -1,0 +1,83 @@
+﻿  climate.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1103): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1140): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1283): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1409): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1416): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1418): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1420): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\climate.c(1430): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+  controls.c
+  culvert.c
+  datetime.c
+  dwflow.c
+  dynwave.c
+  error.c
+  exfil.c
+  findroot.c
+  flowrout.c
+  forcmain.c
+  gage.c
+  gwater.c
+  hash.c
+  hotstart.c
+  iface.c
+  infil.c
+  inflow.c
+  input.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\input.c(184): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\input.c(189): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\input.c(672): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\input.c(868): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\input.c(873): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\input.c(881): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  inputrpt.c
+  Compiling...
+  keywords.c
+  kinwave.c
+  landuse.c
+  lid.c
+  lidproc.c
+  link.c
+  main.c
+  massbal.c
+  mathexpr.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\mathexpr.c(762): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  mempool.c
+  node.c
+  odesolve.c
+  output.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\output.c(549): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  project.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\project.c(325): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  qualrout.c
+  rain.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\rain.c(605): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\rain.c(614): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\rain.c(632): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\rain.c(736): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  rdii.c
+  report.c
+  roadway.c
+  routing.c
+  Compiling...
+  runoff.c
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\runoff.c(428): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+\\home.org.aalto.fi\tjniemi\data\desktop\swmm-dev\src\runoff.c(437): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  shape.c
+  snow.c
+  stats.c
+  statsrpt.c
+  subcatch.c
+  surfqual.c
+  swmm5.c
+  table.c
+  toposort.c
+  transect.c
+  treatmnt.c
+  xsect.c
+     Creating library \\home.org.aalto.fi\tjniemi\data\Desktop\swmm-dev\src\VS2017-CLE\x64\Release\swmm5.lib and object \\home.org.aalto.fi\tjniemi\data\Desktop\swmm-dev\src\VS2017-CLE\x64\Release\swmm5.exp
+  Generating code
+  All 878 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  VS2017-CLE.vcxproj -> \\home.org.aalto.fi\tjniemi\data\Desktop\swmm-dev\src\VS2017-CLE\x64\Release\swmm5.exe
