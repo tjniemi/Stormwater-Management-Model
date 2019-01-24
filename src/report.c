@@ -1027,7 +1027,7 @@ void report_writeSysStats(TSysStats* sysStats)
     double eventStepCount = (double)StepCount - sysStats->steadyStateCount;
 
     if ( Nobjects[LINK] == 0 || StepCount == 0
-	                     || eventStepCount == 0.0 ) return; 
+	                     || eventStepCount == 0.0 ) return;
     WRITE("");
     WRITE("*************************");
     WRITE("Routing Time Step Summary");
@@ -1237,12 +1237,12 @@ void report_Nodes()
                 datetime_dateToStr(days, theDate);
                 datetime_timeToStr(days, theTime);
                 output_readNodeResults(period, k);
-                fprintf(Frpt.file, "\n  %11s %8s  %9.3f %9.3f %9.3f %9.3f",
+                fprintf(Frpt.file, "\n  %11s %8s  %12.6f %12.6f %12.6f %12.6f",     // TJN 24 Jan 2019: "\n  %11s %8s  %9.3f %9.3f %9.3f %9.3f" -> "\n  %11s %8s  %12.6f %12.6f %12.6f %12.6f"
                     theDate, theTime, NodeResults[NODE_INFLOW],
                     NodeResults[NODE_OVERFLOW], NodeResults[NODE_DEPTH],
                     NodeResults[NODE_HEAD]);
                 if ( !IgnoreQuality ) for (p = 0; p < Nobjects[POLLUT]; p++)
-                    fprintf(Frpt.file, " %9.3f", NodeResults[NODE_QUAL + p]);
+                    fprintf(Frpt.file, " %12.6f", NodeResults[NODE_QUAL + p]);       // TJN 24 Jan 2019: " %9.3f" -> " %12.6f"
             }
             WRITE("");
             k++;
@@ -1267,17 +1267,17 @@ void  report_NodeHeader(char *id)
     for (i = 0; i < Nobjects[POLLUT]; i++) fprintf(Frpt.file, LINE_10);
 
     fprintf(Frpt.file,
-    "\n                           Inflow  Flooding     Depth      Head");
+    "\n                              Inflow     Flooding        Depth         Head");   // TJN 24 Jan 2019: "\n                           Inflow  Flooding     Depth      Head" -> "\n                              Inflow     Flooding        Depth         Head"
     if ( !IgnoreQuality ) for (i = 0; i < Nobjects[POLLUT]; i++)
-        fprintf(Frpt.file, "%10s", Pollut[i].ID);
+        fprintf(Frpt.file, "%13s", Pollut[i].ID);       // TJN 24 Jan 2019: "%10s" -> "%13s"
     if ( UnitSystem == US) strcpy(lengthUnits, "feet");
     else strcpy(lengthUnits, "meters");
     fprintf(Frpt.file,
-    "\n  Date        Time      %9s %9s %9s %9s",
+    "\n  Date        Time      %12s %12s %12s %12s",        // TJN 24 Jan 2019: "\n  Date        Time      %9s %9s %9s %9s" -> "\n  Date        Time      %12s %12s %12s %12s"
         FlowUnitWords[FlowUnits], FlowUnitWords[FlowUnits],
         lengthUnits, lengthUnits);
     if ( !IgnoreQuality ) for (i = 0; i < Nobjects[POLLUT]; i++)
-        fprintf(Frpt.file, "%10s", QualUnitsWords[Pollut[i].units]);
+        fprintf(Frpt.file, "%13s", QualUnitsWords[Pollut[i].units]);    // TJN 24 Jan 2019: "%10s" -> "%13s"
 
     WRITE(LINE_64);
     if ( !IgnoreQuality )
@@ -1316,12 +1316,12 @@ void report_Links()
                 datetime_dateToStr(days, theDate);
                 datetime_timeToStr(days, theTime);
                 output_readLinkResults(period, k);
-                fprintf(Frpt.file, "\n  %11s %8s  %9.3f %9.3f %9.3f %9.3f",
+                fprintf(Frpt.file, "\n  %11s %8s  %12.6f %12.6f %12.6f %12.6f",     // TJN 24 Jan 2019: "\n  %11s %8s  %9.3f %9.3f %9.3f %9.3f" -> "\n  %11s %8s  %12.6f %12.6f %12.6f %12.6f"
                     theDate, theTime, LinkResults[LINK_FLOW],
                     LinkResults[LINK_VELOCITY], LinkResults[LINK_DEPTH],
                     LinkResults[LINK_CAPACITY]);
                 if ( !IgnoreQuality ) for (p = 0; p < Nobjects[POLLUT]; p++)
-                    fprintf(Frpt.file, " %9.3f", LinkResults[LINK_QUAL + p]);
+                    fprintf(Frpt.file, " %12.6f", LinkResults[LINK_QUAL + p]);       // TJN 14 Jan 2019: " %9.3f" -> " %12.6f"
             }
             WRITE("");
             k++;
@@ -1345,20 +1345,20 @@ void  report_LinkHeader(char *id)
     for (i = 0; i < Nobjects[POLLUT]; i++) fprintf(Frpt.file, LINE_10);
 
     fprintf(Frpt.file,
-    "\n                             Flow  Velocity     Depth  Capacity/");
+    "\n                                Flow     Velocity        Depth     Capacity/");      // TJN 24 Jan 2019: "\n                             Flow  Velocity     Depth  Capacity/" -> "\n                                Flow     Velocity        Depth     Capacity/"
     if ( !IgnoreQuality ) for (i = 0; i < Nobjects[POLLUT]; i++)
-        fprintf(Frpt.file, "%10s", Pollut[i].ID);
+        fprintf(Frpt.file, "%13s", Pollut[i].ID);       // TJN 24 Jan 2019: "%10s" -> "%13s"
 
     if ( UnitSystem == US )
         fprintf(Frpt.file,
-        "\n  Date        Time     %10s    ft/sec      feet   Setting ",
+        "\n  Date        Time     %13s       ft/sec         feet      Setting ",     // TJN 24 Jan 2019: "\n  Date        Time     %10s    ft/sec      feet   Setting " -> "\n  Date        Time     %13s       ft/sec         feet      Setting "
         FlowUnitWords[FlowUnits]);
     else
         fprintf(Frpt.file,
-        "\n  Date        Time     %10s     m/sec    meters   Setting ",
+        "\n  Date        Time     %13s        m/sec       meters      Setting ",             // TJN 24 Jan 2019: "\n  Date        Time     %10s     m/sec    meters   Setting " -> "\n  Date        Time     %13s        m/sec       meters      Setting "
         FlowUnitWords[FlowUnits]);
     if ( !IgnoreQuality ) for (i = 0; i < Nobjects[POLLUT]; i++)
-        fprintf(Frpt.file, " %9s", QualUnitsWords[Pollut[i].units]);
+        fprintf(Frpt.file, " %12s", QualUnitsWords[Pollut[i].units]);        // TJN 24 Jan 2019: " %9s" -> " %12s"
 
     WRITE(LINE_64);
     if ( !IgnoreQuality )
@@ -1387,7 +1387,7 @@ void report_writeErrorMsg(int code, char* s)
 
     // --- save message to ErrorMsg if it's not for a line of input data
     if ( ErrorCode <= ERR_INPUT || ErrorCode >= ERR_FILE_NAME )
-    {                                                
+    {
         sprintf(ErrorMsg, error_getMsg(ErrorCode), s);
     }
 }
