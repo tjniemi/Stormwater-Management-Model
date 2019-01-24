@@ -22,17 +22,197 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
 				</Compiler>
-				<Linker>
-					<Add option="-s" />
-				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-fopenmp" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Linker>
+			<Add library="gomp" />
+		</Linker>
+		<Unit filename="src/climate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/consts.h" />
+		<Unit filename="src/controls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/culvert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datetime.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/datetime.h" />
+		<Unit filename="src/dwflow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/dynwave.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/enums.h" />
+		<Unit filename="src/error.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/error.h" />
+		<Unit filename="src/exfil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/exfil.h" />
+		<Unit filename="src/findroot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/findroot.h" />
+		<Unit filename="src/flowrout.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/forcmain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/funcs.h" />
+		<Unit filename="src/gage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/globals.h" />
+		<Unit filename="src/gwater.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/hash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/hash.h" />
+		<Unit filename="src/headers.h" />
+		<Unit filename="src/hotstart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/iface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/infil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/infil.h" />
+		<Unit filename="src/inflow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/inputrpt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/keywords.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/keywords.h" />
+		<Unit filename="src/kinwave.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/landuse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/lid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/lid.h" />
+		<Unit filename="src/lidproc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/link.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/macros.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/massbal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mathexpr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mathexpr.h" />
+		<Unit filename="src/mempool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mempool.h" />
+		<Unit filename="src/node.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/objects.h" />
+		<Unit filename="src/odesolve.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/odesolve.h" />
+		<Unit filename="src/output.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/project.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/qualrout.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/rain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/rdii.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/report.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/roadway.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/routing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/runoff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/shape.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/snow.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/stats.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/statsrpt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/subcatch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/surfqual.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/swmm5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/swmm5.h" />
+		<Unit filename="src/table.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/text.h" />
+		<Unit filename="src/toposort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/transect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/treatmnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/xsect.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

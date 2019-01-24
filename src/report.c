@@ -1113,9 +1113,9 @@ void report_Subcatchments()
                 datetime_dateToStr(days, theDate);
                 datetime_timeToStr(days, theTime);
                 output_readSubcatchResults(period, k);
-                fprintf(Frpt.file, "\n  %11s %8s %10.3f%10.3f%10.4f",
+                fprintf(Frpt.file, "\n  %11s %8s %10.3f%12.4f%12.4f%12.4f",       // TJN 24 Jan 2019: fprintf(Frpt.file, "\n  %11s %8s %10.3f%10.3f%10.4f", --> fprintf(Frpt.file, "\n  %11s %8s %10.3f%12.4f%12.4f%12.4f",
                     theDate, theTime, SubcatchResults[SUBCATCH_RAINFALL],
-                    SubcatchResults[SUBCATCH_EVAP]/24.0 +
+                    SubcatchResults[SUBCATCH_EVAP]/24.0,                       // TJN 24 Jan 2019: SubcatchResults[SUBCATCH_EVAP]/24.0 + --> SubcatchResults[SUBCATCH_EVAP]/24.0,
                     SubcatchResults[SUBCATCH_INFIL],
                     SubcatchResults[SUBCATCH_RUNOFF]);
                 if ( hasSnowmelt )
@@ -1153,7 +1153,7 @@ void  report_SubcatchHeader(char *id)
     // --- print top border of header
     WRITE("");
     fprintf(Frpt.file,"\n  <<< Subcatchment %s >>>", id);
-    WRITE(LINE_51);
+    WRITE(LINE_64);                                         // TJN 24 Jan 2019: WRITE(LINE_51);		--> WRITE(LINE_64);
     if ( hasSnowmelt  > 0 ) fprintf(Frpt.file, LINE_12);
     if ( hasGwater )
     {
@@ -1167,7 +1167,7 @@ void  report_SubcatchHeader(char *id)
 
     // --- print first line of column headings
     fprintf(Frpt.file,
-    "\n  Date        Time        Precip.    Losses    Runoff");
+    "\n  Date        Time        Precip.       Evap.      Infilt.     Runoff");         // TJN 24 Jan 2019: "\n  Date        Time        Precip.    Losses    Runoff"); --> "\n  Date        Time        Precip.      Evap.       Infilt.     Runoff");
     if ( hasSnowmelt ) fprintf(Frpt.file, "  Snow Depth");
     if ( hasGwater   ) fprintf(Frpt.file, "  GW Elev.   GW Flow");
     if ( hasQuality ) for (i = 0; i < Nobjects[POLLUT]; i++)
@@ -1175,9 +1175,9 @@ void  report_SubcatchHeader(char *id)
 
     // --- print second line of column headings
     if ( UnitSystem == US ) fprintf(Frpt.file,
-    "\n                            in/hr     in/hr %9s", FlowUnitWords[FlowUnits]);
+    "\n                            in/hr       in/hr       in/hr %11s", FlowUnitWords[FlowUnits]);      // TJN 24 Jan 2019: "\n                            in/hr     in/hr %9s", FlowUnitWords[FlowUnits]); --> "\n                            in/hr       in/hr       in/hr %11s", FlowUnitWords[FlowUnits]);
     else fprintf(Frpt.file,
-    "\n                            mm/hr     mm/hr %9s", FlowUnitWords[FlowUnits]);
+    "\n                            mm/hr       mm/hr       mm/hr %11s", FlowUnitWords[FlowUnits]);      // TJN 24 Jan 2019: "\n                            mm/hr     mm/hr %9s", FlowUnitWords[FlowUnits]); --> "\n                            mm/hr       mm/hr       mm/hr %11s", FlowUnitWords[FlowUnits]);
     if ( hasSnowmelt )
     {
         if ( UnitSystem == US ) fprintf(Frpt.file, "      inches");
@@ -1194,7 +1194,7 @@ void  report_SubcatchHeader(char *id)
         fprintf(Frpt.file, "%10s", QualUnitsWords[Pollut[i].units]);
 
     // --- print lower border of header
-    WRITE(LINE_51);
+    WRITE(LINE_64);                                     // TJN 24 Jan 2019: WRITE(LINE_51);		--> WRITE(LINE_64);
     if ( hasSnowmelt ) fprintf(Frpt.file, LINE_12);
     if ( hasGwater )
     {
