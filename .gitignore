@@ -30,3 +30,6 @@
 .metadata/
 .settings/
 
+# Codeblocks stuff
+*.depend
+*.layout
